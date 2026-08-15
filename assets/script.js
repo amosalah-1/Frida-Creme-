@@ -9,7 +9,21 @@ document.addEventListener('DOMContentLoaded', function(){
   // Mobile menu
   const mobileBtn = document.getElementById('mobileMenuBtn');
   const mobileNav = document.getElementById('mobileNav');
-  mobileBtn?.addEventListener('click', ()=> mobileNav.classList.toggle('hidden'));
+
+  const toggleMobileMenu = () => {
+    if (!mobileNav || !mobileBtn) return;
+    mobileNav.classList.toggle('hidden');
+    const isExpanded = !mobileNav.classList.contains('hidden');
+    mobileBtn.setAttribute('aria-expanded', String(isExpanded));
+  };
+
+  mobileBtn?.addEventListener('click', toggleMobileMenu);
+  mobileNav?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.add('hidden');
+      mobileBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
 
   // Counters when in viewport
   const counters = document.querySelectorAll('.counter');
