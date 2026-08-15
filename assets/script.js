@@ -12,15 +12,31 @@ document.addEventListener('DOMContentLoaded', function(){
 
   const toggleMobileMenu = () => {
     if (!mobileNav || !mobileBtn) return;
-    mobileNav.classList.toggle('hidden');
-    const isExpanded = !mobileNav.classList.contains('hidden');
-    mobileBtn.setAttribute('aria-expanded', String(isExpanded));
+
+    const isOpen = !mobileNav.classList.contains('hidden');
+    if (isOpen) {
+      mobileNav.classList.add('hidden');
+      mobileNav.classList.remove('max-h-96', 'opacity-100');
+      mobileNav.classList.add('max-h-0', 'opacity-0');
+      mobileBtn.setAttribute('aria-expanded', 'false');
+      return;
+    }
+
+    mobileNav.classList.remove('hidden');
+    requestAnimationFrame(() => {
+      mobileNav.classList.remove('max-h-0', 'opacity-0');
+      mobileNav.classList.add('max-h-96', 'opacity-100');
+    });
+
+    mobileBtn.setAttribute('aria-expanded', 'true');
   };
 
   mobileBtn?.addEventListener('click', toggleMobileMenu);
   mobileNav?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       mobileNav.classList.add('hidden');
+      mobileNav.classList.remove('max-h-96', 'opacity-100');
+      mobileNav.classList.add('max-h-0', 'opacity-0');
       mobileBtn.setAttribute('aria-expanded', 'false');
     });
   });
