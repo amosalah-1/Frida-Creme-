@@ -1,0 +1,76 @@
+/* Minimal critical styles to avoid FOUC */
+:root{--brand:#0ea5a4;--accent:#f97316}
+html{scroll-behavior:smooth}
+
+@layer utilities {
+  .animate-blob {
+    animation: blob 8s infinite;
+  }
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(10px, -10px) scale(1.05); }
+    66% { transform: translate(-10px, 10px) scale(0.95); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+}
+
+/* Primary CTA style used across the site */
+.btn-primary{background:linear-gradient(90deg,var(--brand),var(--accent));color:#fff}
+.btn-primary:hover{filter:brightness(0.95);transform:translateY(-1px)}
+.btn-primary:active{transform:translateY(0)}
+
+/* Form inputs: ensure high contrast and visible focus */
+input, textarea, select {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid rgba(15,23,42,0.08);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #94a3b8;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: rgba(6,182,212,0.9);
+  box-shadow: 0 6px 18px rgba(6,182,212,0.06), 0 0 0 4px rgba(6,182,212,0.08);
+}
+
+/* Ensure inputs inside white cards remain visible on dark mode too */
+@media (prefers-color-scheme: dark){
+  input, textarea, select { background: #0b1220; color: #e6eef6; border: 1px solid rgba(255,255,255,0.06); }
+  input::placeholder, textarea::placeholder { color: rgba(230,238,246,0.52); }
+}
+
+/* Force contact form inputs to remain white even in dark mode for clarity */
+#contact input, #contact textarea, #contact select {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid rgba(15,23,42,0.12) !important;
+}
+#contact input::placeholder, #contact textarea::placeholder { color: #94a3b8 !important; }
+
+
+/* Simple visually pleasing focus states */
+button:focus, a:focus, input:focus, textarea:focus, select:focus { outline: 3px solid rgba(6,182,212,0.12); outline-offset: 3px; }
+
+/* Carousel track behavior */
+.carousel-track { overflow: hidden; }
+.carousel-items > blockquote { min-width: 100%; }
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+  .carousel-items > blockquote { min-width: 33.3333%; }
+}
+
+/* Lightbox */
+#lightbox { display: none; }
+#lightbox.show { display: flex; }
+
+/* Reduce motion if user prefers */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

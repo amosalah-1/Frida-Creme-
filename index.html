@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FRIDAH CREME BALES — Shoes & Clothings | Muranga</title>
+  <meta name="description" content="FRIDAH CREME BALES — Premium shoes and clothings in Muranga. Quality, style and reliable service." />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="FRIDAH CREME BALES — Shoes & Clothings" />
+  <meta property="og:description" content="Premium shoes and clothings in Muranga. Quality, style and reliable service." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Structured Data (LocalBusiness placeholder) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "FRIDAH CREME BALES",
+    "image": ["images/og-image.jpg"],
+    "@id": "",
+    "url": "",
+    "telephone": "0117446801",
+    "address": { "@type": "PostalAddress", "addressLocality": "Muranga" },
+    "priceRange": "",
+    "description": "Shoes and clothings"
+  }
+  </script>
+
+  <!-- Tailwind Play CDN for quick prototyping (replace with build setup later) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- AOS for scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@0.244.0/dist/lucide.min.js"></script>
+
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="images/favicon.png">
+</head>
+<body class="font-sans text-slate-800 bg-gradient-to-b from-white to-slate-50 antialiased">
+
+  <div id="app" class="min-h-screen">
+    <!-- Navigation -->
+    <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-white/60 dark:bg-slate-900/60 border-b border-slate-200/40">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a class="flex items-center gap-3" href="#home" aria-label="FRIDAH CREME BALES">
+            <div class="w-10 h-10 bg-gradient-to-tr from-rose-400 to-indigo-500 rounded-lg shadow-md flex items-center justify-center text-white font-semibold">FC</div>
+            <div class="hidden sm:block">
+              <div class="text-sm font-semibold">FRIDAH CREME BALES</div>
+              <div class="text-xs text-slate-500">Shoes & Clothings — Muranga</div>
+            </div>
+          </a>
+
+          <nav class="hidden md:flex items-center gap-6 text-sm">
+            <a href="#home" class="hover:text-slate-900">Home</a>
+            <a href="#about" class="hover:text-slate-900">About</a>
+            <a href="#services" class="hover:text-slate-900">Services</a>
+            <a href="#why" class="hover:text-slate-900">Why Choose Us</a>
+            <a href="#testimonials" class="hover:text-slate-900">Testimonials</a>
+            <a href="#contact" class="hover:text-slate-900">Contact</a>
+          </nav>
+
+          <div class="flex items-center gap-3">
+            <a href="#contact" class="hidden md:inline-block px-4 py-2 btn-primary rounded-md shadow">Get Started</a>
+
+            <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md bg-white/50 hover:bg-white/70 border">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="lucide" data-lucide="menu"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile nav -->
+      <div id="mobileNav" class="md:hidden hidden border-t border-slate-100/50 bg-white/70 backdrop-blur-sm">
+        <div class="px-4 py-4 flex flex-col gap-2">
+          <a href="#home" class="block py-2">Home</a>
+          <a href="#about" class="block py-2">About</a>
+          <a href="#services" class="block py-2">Services</a>
+          <a href="#why" class="block py-2">Why Choose Us</a>
+          <a href="#testimonials" class="block py-2">Testimonials</a>
+          <a href="#contact" class="block py-2">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main class="pt-24" id="home">
+      <section class="relative overflow-hidden">
+        <div class="absolute inset-0 -z-10">
+          <svg class="w-full h-full" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g1" x1="0%" x2="100%">
+                <stop offset="0%" stop-color="#f97316" stop-opacity="0.12" />
+                <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.08" />
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#g1)"/>
+          </svg>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-20">
+            <div data-aos="fade-up" class="space-y-6">
+              <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">Experience Better Style & Comfort</h1>
+              <p class="text-slate-600 max-w-xl">Premium shoes and clothings crafted for confidence. Shop curated collections that blend contemporary trends with lasting quality.</p>
+              <div class="flex gap-3">
+                <a href="#contact" class="px-5 py-3 rounded-lg btn-primary font-semibold shadow">Get Started</a>
+                <a href="#services" class="px-5 py-3 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-700">Explore Services</a>
+              </div>
+
+              <div class="flex items-center gap-6 mt-4 text-sm text-slate-600">
+                <div class="flex items-center gap-2"><strong class="text-slate-900">Since</strong><span>— Placeholder</span></div>
+                <div class="flex items-center gap-2"><strong class="text-slate-900" id="customersCounter">0</strong><span>Customers</span></div>
+                <div class="flex items-center gap-2"><strong class="text-slate-900" id="projectsCounter">0</strong><span>Projects</span></div>
+              </div>
+            </div>
+
+            <div data-aos="fade-left" class="relative">
+              <div class="rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-white/60 to-slate-50 p-1">
+                <div class="bg-white rounded-xl overflow-hidden">
+                  <img src="images/hero.jpg" alt="FRIDAH CREME BALES showcase" class="w-full h-80 object-cover block">
+                </div>
+              </div>
+              <!-- Signature visual element: subtle animated gradient blob -->
+              <svg class="absolute -right-6 -bottom-6 w-56 h-56 opacity-60 animate-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="blobGrad" x1="0%" x2="100%"><stop offset="0%" stop-color="#f97316"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+                </defs>
+                <path fill="url(#blobGrad)" d="M43.8,-63.2C56.6,-56.4,66.6,-44.6,70.8,-31.8C75,-19,73.4,-5.1,69.6,8.2C65.8,21.6,59.8,34.3,49,44.4C38.3,54.5,22.7,62,6.8,60.1C-9.2,58.3,-18.4,46.9,-30.7,37.7C-43,28.6,-58.4,21.6,-62.7,9.9C-67,-1.8,-60.2,-19.2,-49.6,-28.9C-39,-38.6,-24.7,-40.7,-10.9,-45.4C3,-50.1,16.1,-57.1,43.8,-63.2Z" transform="translate(100 100)"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust & Stats -->
+      <section class="py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="bg-white rounded-lg p-6 shadow-sm" data-aos="zoom-in">
+              <div class="text-3xl font-bold text-emerald-500 counter" data-target="120">0</div>
+              <div class="text-sm text-slate-500 mt-2">Customers Served</div>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm" data-aos="zoom-in" data-aos-delay="50">
+              <div class="text-3xl font-bold text-emerald-500 counter" data-target="6">0</div>
+              <div class="text-sm text-slate-500 mt-2">Years Experience</div>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm" data-aos="zoom-in" data-aos-delay="100">
+              <div class="text-3xl font-bold text-emerald-500 counter" data-target="340">0</div>
+              <div class="text-sm text-slate-500 mt-2">Projects Completed</div>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm" data-aos="zoom-in" data-aos-delay="150">
+              <div class="text-3xl font-bold text-emerald-500">★★★★★</div>
+              <div class="text-sm text-slate-500 mt-2">Customer Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="py-16 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between mb-8">
+            <h2 class="text-2xl font-bold">Our Collections & Services</h2>
+            <p class="text-sm text-slate-500">Curated styles, great quality, fair pricing.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Service Card -->
+            <article class="group bg-white rounded-2xl p-6 shadow hover:shadow-lg transition" data-aos="fade-up">
+              <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-lg bg-gradient-to-br from-rose-400 to-indigo-500 flex items-center justify-center text-white">
+                  <svg class="lucide" data-lucide="shopping-bag" width="20" height="20"><path d="M6 2l2 3h8l2-3"></path></svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Men's Shoes</h3>
+                  <p class="text-sm text-slate-500">Durable, comfortable and stylish shoes for everyday wear.</p>
+                </div>
+              </div>
+              <ul class="mt-4 text-sm text-slate-600 space-y-1">
+                <li>• Quality materials</li>
+                <li>• Affordable pricing</li>
+                <li>• Fast delivery</li>
+              </ul>
+              <div class="mt-4 flex items-center gap-3">
+                <a href="#contact" class="text-emerald-600 font-medium">Get Started →</a>
+                <a href="#" class="text-sm text-slate-400">From KSh. [price]</a>
+              </div>
+            </article>
+
+            <article class="group bg-white rounded-2xl p-6 shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="50">
+              <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-lg bg-gradient-to-br from-amber-400 to-pink-500 flex items-center justify-center text-white">
+                  <svg class="lucide" data-lucide="t-shirt" width="20" height="20"></svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Clothing</h3>
+                  <p class="text-sm text-slate-500">Trendy apparel for men and women—casual to formal.</p>
+                </div>
+              </div>
+              <ul class="mt-4 text-sm text-slate-600 space-y-1">
+                <li>• Wide size range</li>
+                <li>• Curated collections</li>
+                <li>• Easy returns</li>
+              </ul>
+              <div class="mt-4 flex items-center gap-3">
+                <a href="#contact" class="text-emerald-600 font-medium">Learn More →</a>
+                <a href="#" class="text-sm text-slate-400">From KSh. [price]</a>
+              </div>
+            </article>
+
+            <article class="group bg-white rounded-2xl p-6 shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+              <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-lg bg-gradient-to-br from-sky-400 to-violet-500 flex items-center justify-center text-white">
+                  <svg class="lucide" data-lucide="map-pin" width="20" height="20"></svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Custom Orders</h3>
+                  <p class="text-sm text-slate-500">Personalized styling and bespoke sizing available.</p>
+                </div>
+              </div>
+              <ul class="mt-4 text-sm text-slate-600 space-y-1">
+                <li>• Tailored fit</li>
+                <li>• Premium finishes</li>
+                <li>• Priority turnaround</li>
+              </ul>
+              <div class="mt-4 flex items-center gap-3">
+                <a href="#contact" class="text-emerald-600 font-medium">Request Quote →</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us -->
+      <section id="why" class="py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div data-aos="fade-right">
+              <h3 class="text-2xl font-bold">Why Choose FRIDAH CREME BALES?</h3>
+              <p class="text-slate-600 mt-3">We focus on delivering value to customers—quality, fit, and a hassle-free shopping experience.</p>
+              <ul class="mt-6 space-y-3 text-sm text-slate-600">
+                <li>• Quality materials and skilled craftsmanship</li>
+                <li>• Transparent pricing and value</li>
+                <li>• Fast, reliable customer support</li>
+                <li>• Easy exchanges and returns</li>
+              </ul>
+            </div>
+            <div data-aos="fade-left">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white p-6 rounded-xl shadow">
+                  <h4 class="font-semibold">Quality</h4>
+                  <p class="text-sm text-slate-500 mt-2">Sourced fabrics and durable construction.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow">
+                  <h4 class="font-semibold">Affordable</h4>
+                  <p class="text-sm text-slate-500 mt-2">Great value for premium looks.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow">
+                  <h4 class="font-semibold">Fast Service</h4>
+                  <p class="text-sm text-slate-500 mt-2">Quick processing and delivery.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow">
+                  <h4 class="font-semibold">Support</h4>
+                  <p class="text-sm text-slate-500 mt-2">Friendly and professional help.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="py-12 bg-slate-50">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h3 class="text-2xl font-bold">How It Works</h3>
+          <div class="mt-8 grid grid-cols-1 sm:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow" data-aos="fade-up">
+              <div class="text-2xl font-bold text-emerald-500">01</div>
+              <h4 class="mt-2 font-semibold">Contact Us</h4>
+              <p class="text-sm text-slate-500 mt-1">Tell us what you need.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow" data-aos="fade-up" data-aos-delay="50">
+              <div class="text-2xl font-bold text-emerald-500">02</div>
+              <h4 class="mt-2 font-semibold">Choose Service</h4>
+              <p class="text-sm text-slate-500 mt-1">Pick the items or package.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow" data-aos="fade-up" data-aos-delay="100">
+              <div class="text-2xl font-bold text-emerald-500">03</div>
+              <h4 class="mt-2 font-semibold">We Deliver</h4>
+              <p class="text-sm text-slate-500 mt-1">We prepare and deliver on time.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow" data-aos="fade-up" data-aos-delay="150">
+              <div class="text-2xl font-bold text-emerald-500">04</div>
+              <h4 class="mt-2 font-semibold">Enjoy</h4>
+              <p class="text-sm text-slate-500 mt-1">Wear with confidence.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Special Offer -->
+      <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="bg-gradient-to-r from-emerald-500 to-amber-400 rounded-2xl p-8 text-white shadow-lg" data-aos="zoom-in">
+            <h3 class="text-2xl font-bold">Limited Time Offer</h3>
+            <p class="mt-2">Get 10% off your first order. Use code: WELCOME10 (placeholder)</p>
+            <div class="mt-4">
+              <a href="#contact" class="inline-block px-6 py-3 bg-white text-emerald-600 rounded-lg font-semibold">Claim Offer</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section class="py-12 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 class="text-2xl font-bold mb-6">Gallery</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <button class="group block rounded-lg overflow-hidden" data-img="images/gallery1.jpg">
+              <img src="images/gallery1.jpg" alt="Gallery image 1" class="w-full h-40 object-cover group-hover:scale-105 transition"/>
+            </button>
+            <button class="group block rounded-lg overflow-hidden" data-img="images/gallery2.jpg">
+              <img src="images/gallery2.jpg" alt="Gallery image 2" class="w-full h-40 object-cover group-hover:scale-105 transition"/>
+            </button>
+            <button class="group block rounded-lg overflow-hidden" data-img="images/gallery3.jpg">
+              <img src="images/gallery3.jpg" alt="Gallery image 3" class="w-full h-40 object-cover group-hover:scale-105 transition"/>
+            </button>
+            <button class="group block rounded-lg overflow-hidden" data-img="images/gallery4.jpg">
+              <img src="images/gallery4.jpg" alt="Gallery image 4" class="w-full h-40 object-cover group-hover:scale-105 transition"/>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="testimonials" class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h3 class="text-2xl font-bold mb-6">What Customers Say</h3>
+          <div id="testimonialsCarousel" class="relative">
+            <div class="carousel-track overflow-hidden">
+              <div class="carousel-items flex transition-transform" style="transform:translateX(0)">
+                <blockquote class="w-full md:w-96 bg-white p-6 rounded-xl shadow mx-2">
+                  <p class="text-slate-600">"Great quality and fast delivery!"</p>
+                  <footer class="mt-4 text-sm text-slate-500">— Jane Doe</footer>
+                </blockquote>
+                <blockquote class="w-full md:w-96 bg-white p-6 rounded-xl shadow mx-2">
+                  <p class="text-slate-600">"Amazing selection and friendly service."</p>
+                  <footer class="mt-4 text-sm text-slate-500">— John K</footer>
+                </blockquote>
+                <blockquote class="w-full md:w-96 bg-white p-6 rounded-xl shadow mx-2">
+                  <p class="text-slate-600">"I love my custom order—perfect fit."</p>
+                  <footer class="mt-4 text-sm text-slate-500">— Mary P</footer>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-12 bg-slate-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 class="text-2xl font-bold mb-6">Frequently Asked Questions</h3>
+          <div id="faq" class="space-y-3">
+            <details class="bg-white p-4 rounded-lg shadow" open>
+              <summary class="font-semibold">What services do you offer?</summary>
+              <p class="mt-2 text-sm text-slate-600">We sell shoes and clothings, and offer custom orders.</p>
+            </details>
+            <details class="bg-white p-4 rounded-lg shadow">
+              <summary class="font-semibold">How can I place an order?</summary>
+              <p class="mt-2 text-sm text-slate-600">Contact us via WhatsApp or the contact form with your requirements.</p>
+            </details>
+            <details class="bg-white p-4 rounded-lg shadow">
+              <summary class="font-semibold">How long does delivery take?</summary>
+              <p class="mt-2 text-sm text-slate-600">Delivery times vary—typical turnaround is 2–7 business days.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact / Conversion -->
+      <section id="contact" class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="bg-white rounded-2xl shadow p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h3 class="text-2xl font-bold">Ready to Get Started?</h3>
+                <p class="text-slate-600 mt-2">Let’s help you find the right shoes and outfits. Send a message and we’ll respond quickly.</p>
+                <ul class="mt-4 text-sm text-slate-600 space-y-2">
+                  <li><strong>Phone:</strong> 0117446801</li>
+                  <li><strong>Email:</strong> [ENTER EMAIL]</li>
+                  <li><strong>WhatsApp:</strong> 0117446801</li>
+                </ul>
+                <div class="mt-6 flex gap-3">
+                  <a href="tel:0117446801" class="px-4 py-2 bg-emerald-500 text-white rounded">Call Us</a>
+                  <a id="whatsappBtn" href="https://wa.me/0117446801" class="px-4 py-2 border rounded">WhatsApp Us</a>
+                </div>
+              </div>
+
+              <form id="contactForm" class="space-y-4" novalidate>
+                <div>
+                  <label class="text-sm font-medium">Full name</label>
+                  <input name="name" required class="mt-1 block w-full border rounded-lg p-3" />
+                </div>
+                <div>
+                  <label class="text-sm font-medium">Phone</label>
+                  <input name="phone" required class="mt-1 block w-full border rounded-lg p-3" />
+                </div>
+                <div>
+                  <label class="text-sm font-medium">Email</label>
+                  <input name="email" type="email" required class="mt-1 block w-full border rounded-lg p-3" />
+                </div>
+                <div>
+                  <label class="text-sm font-medium">Service required</label>
+                  <select name="service" class="mt-1 block w-full border rounded-lg p-3">
+                    <option>Men's Shoes</option>
+                    <option>Clothing</option>
+                    <option>Custom Order</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="text-sm font-medium">Message</label>
+                  <textarea name="message" rows="4" class="mt-1 block w-full border rounded-lg p-3"></textarea>
+                </div>
+                <div>
+                  <button type="submit" class="px-5 py-3 bg-emerald-500 text-white rounded-lg">Send Message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="py-8 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-gradient-to-tr from-rose-400 to-indigo-500 rounded-lg flex items-center justify-center font-semibold">FC</div>
+              <div>
+                <div class="font-semibold">FRIDAH CREME BALES</div>
+                <div class="text-sm text-slate-300">Shoes & Clothings — Muranga</div>
+              </div>
+            </div>
+            <p class="text-sm text-slate-400 mt-4">Premium footwear and apparel. Replace placeholder info with your contact details.</p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold">Quick Links</h4>
+            <ul class="mt-3 text-sm text-slate-300 space-y-2">
+              <li><a href="#services">Services</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold">Contact</h4>
+            <p class="text-sm text-slate-300 mt-3">[ENTER EMAIL] • 0117446801</p>
+            <div class="mt-4 flex gap-3">
+              <a href="https://www.tiktok.com/@fridahkassim?_r=1&_t=ZS-98lTos03unh" class="text-slate-300">TikTok</a>
+              <a href="https://wa.me/0117446801" class="text-slate-300">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 text-sm text-slate-400">© <span id="year">2026</span> FRIDAH CREME BALES. All rights reserved.</div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+    <button id="lightboxClose" class="absolute top-6 right-6 text-white text-2xl">×</button>
+    <img id="lightboxImg" src="" alt="" class="max-h-[90vh] rounded-lg shadow-lg" />
+  </div>
+
+  <button id="floatingWhatsApp" aria-label="WhatsApp" class="fixed right-5 bottom-5 z-50 w-14 h-14 rounded-full bg-emerald-500 shadow-lg flex items-center justify-center text-white">WA</button>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
