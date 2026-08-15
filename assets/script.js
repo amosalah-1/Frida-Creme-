@@ -41,6 +41,14 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 
+  window.addEventListener('scroll', () => {
+    if (mobileNav && !mobileNav.classList.contains('hidden')) {
+      mobileNav.classList.remove('hidden');
+      mobileNav.classList.remove('max-h-0', 'opacity-0');
+      mobileNav.classList.add('max-h-96', 'opacity-100');
+    }
+  }, { passive: true });
+
   // Counters when in viewport
   const counters = document.querySelectorAll('.counter');
   const observer = new IntersectionObserver(entries=>{
