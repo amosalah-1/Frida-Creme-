@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function(){
   // WhatsApp floating button
   const whatsappBtn = document.getElementById('floatingWhatsApp');
   const whatsappContactBtn = document.getElementById('whatsappBtn');
-  const phone = '0117446801';
+  const phone = '+254117446801';
   const defaultMsg = encodeURIComponent('Hello, I found your website and I would like to know more about your services.');
   const waUrl = (num)=> `https://wa.me/${num.replace(/\D/g,'')}?text=${defaultMsg}`;
   whatsappBtn?.addEventListener('click', ()=>{ if(phone.includes('ENTER')) alert('Please update your WhatsApp number in the site files.'); else window.open(waUrl(phone),'_blank'); });
