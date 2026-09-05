@@ -1,10 +1,24 @@
-// Basic interactions: mobile menu, counters, carousel, lightbox, WhatsApp
+// Basic interactions: mobile menu, counters, carousel, lightbox, WhatsApp, newsletter
 document.addEventListener('DOMContentLoaded', function(){
   // Lucide icons init
   if(window.lucide) lucide.init();
 
-  // AOS init (moved from inline)
-  if(window.AOS) AOS.init({duration:600,once:true});
+  // AOS init - ensure content is visible even if AOS fails
+  try {
+    if(window.AOS) {
+      AOS.init({duration:600,once:true});
+    } else {
+      // Fallback: make all data-aos elements visible immediately
+      document.querySelectorAll('[data-aos]').forEach(el => {
+        el.style.opacity = '1';
+      });
+    }
+  } catch(e) {
+    console.log('AOS initialization failed, elements will still be visible');
+    document.querySelectorAll('[data-aos]').forEach(el => {
+      el.style.opacity = '1';
+    });
+  }
 
   // Mobile menu
   const mobileBtn = document.getElementById('mobileMenuBtn');
@@ -97,7 +111,18 @@ document.addEventListener('DOMContentLoaded', function(){
     e.preventDefault(); const fd = new FormData(form); const data = Object.fromEntries(fd.entries());
     if(!data.name || !data.email || !data.phone){ alert('Please fill name, email and phone.'); return; }
     const body = `Name: ${data.name}%0APhone: ${data.phone}%0AEmail: ${data.email}%0AService: ${data.service}%0A%0AMessage:%0A${(data.message||'')}`;
-    window.location.href = `mailto:${encodeURIComponent('[ENTER EMAIL]')}?subject=${encodeURIComponent('New contact from website')}&body=${body}`;
+    window.location.href = `mailto:${encodeURIComponent('fridahcremebales@gmail.com')}?subject=${encodeURIComponent('New contact from website')}&body=${body}`;
+  });
+
+  // Newsletter signup
+  window.handleNewsletterSignup = function(e) {
+    e.preventDefault();
+    const email = document.querySelector('#newsletterForm input[name="email"]').value;
+    alert('Thank you for subscribing! Check your email for confirmations and offers.');
+    document.getElementById('newsletterForm').reset();
+    // In production, send this to your backend/email service
+    return false;
+  };
   });
 
   // Update year

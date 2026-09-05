@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout — FRIDAH CREME BALES</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="font-sans text-slate-800 bg-gradient-to-b from-white to-slate-50 antialiased">
+  <div id="app" class="min-h-screen">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/60 border-b border-slate-200/40">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a class="flex items-center gap-3" href="index.html">
+            <div class="w-10 h-10 bg-gradient-to-tr from-rose-400 to-indigo-500 rounded-lg flex items-center justify-center text-white font-semibold">FC</div>
+            <div class="hidden sm:block">
+              <div class="text-sm font-semibold">FRIDAH CREME BALES</div>
+              <div class="text-xs text-slate-500">Shoes & Clothings — Muranga</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="py-8">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl font-extrabold mb-8">Checkout</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Checkout Form -->
+          <div class="md:col-span-2 space-y-6">
+            <!-- Delivery Information -->
+            <div class="bg-white rounded-xl shadow p-6">
+              <h2 class="text-xl font-bold mb-4">Delivery Information</h2>
+              <form id="checkoutForm" class="space-y-4" novalidate>
+                <div>
+                  <label class="text-sm font-medium">Full Name *</label>
+                  <input name="name" type="text" required class="mt-1 block w-full border rounded-lg p-3" />
+                </div>
+                <div>
+                  <label class="text-sm font-medium">Email *</label>
+                  <input name="email" type="email" required class="mt-1 block w-full border rounded-lg p-3" />
+                </div>
+                <div>
+                  <label class="text-sm font-medium">Phone Number *</label>
+                  <input name="phone" type="tel" required class="mt-1 block w-full border rounded-lg p-3" />
+                </div>
+                <div>
+                  <label class="text-sm font-medium">Delivery Address *</label>
+                  <textarea name="address" required rows="3" class="mt-1 block w-full border rounded-lg p-3"></textarea>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <label class="text-sm font-medium">City *</label>
+                    <input name="city" type="text" required class="mt-1 block w-full border rounded-lg p-3" />
+                  </div>
+                  <div>
+                    <label class="text-sm font-medium">Postal Code</label>
+                    <input name="postal" type="text" class="mt-1 block w-full border rounded-lg p-3" />
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- Delivery Method -->
+            <div class="bg-white rounded-xl shadow p-6">
+              <h2 class="text-xl font-bold mb-4">Delivery Method</h2>
+              <div class="space-y-3">
+                <label class="flex items-center p-3 border-2 border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="delivery" value="standard" checked class="w-4 h-4">
+                  <span class="ml-3">
+                    <strong>Standard Delivery (2-7 business days)</strong>
+                    <p class="text-sm text-slate-600">Free shipping for orders over KSh. 3,000</p>
+                  </span>
+                </label>
+                <label class="flex items-center p-3 border-2 border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="delivery" value="express" class="w-4 h-4">
+                  <span class="ml-3">
+                    <strong>Express Delivery (1-2 business days)</strong>
+                    <p class="text-sm text-slate-600">Additional KSh. 500 charge</p>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="bg-white rounded-xl shadow p-6">
+              <h2 class="text-xl font-bold mb-4">Payment Method</h2>
+              <div class="space-y-3">
+                <label class="flex items-center p-3 border-2 border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="payment" value="mpesa" checked class="w-4 h-4">
+                  <span class="ml-3">
+                    <strong>M-Pesa</strong>
+                    <p class="text-sm text-slate-600">Pay via M-Pesa - easiest and fastest</p>
+                  </span>
+                </label>
+                <label class="flex items-center p-3 border-2 border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="payment" value="bank" class="w-4 h-4">
+                  <span class="ml-3">
+                    <strong>Bank Transfer</strong>
+                    <p class="text-sm text-slate-600">Direct bank deposit</p>
+                  </span>
+                </label>
+                <label class="flex items-center p-3 border-2 border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="payment" value="cod" class="w-4 h-4">
+                  <span class="ml-3">
+                    <strong>Cash on Delivery</strong>
+                    <p class="text-sm text-slate-600">Pay when your order arrives</p>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="bg-white rounded-xl shadow p-6 h-fit sticky top-20">
+            <h2 class="text-xl font-bold mb-4">Order Summary</h2>
+            <div id="orderItems" class="space-y-3 mb-4 pb-4 border-b border-slate-200">
+              <!-- Items will be loaded here -->
+            </div>
+            
+            <div class="space-y-2 mb-4">
+              <div class="flex justify-between text-sm">
+                <span>Subtotal:</span>
+                <span>KSh. <span id="subtotal">0</span></span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span>Delivery:</span>
+                <span>KSh. <span id="deliveryFee">0</span></span>
+              </div>
+            </div>
+            
+            <div class="flex justify-between text-lg font-bold p-4 bg-slate-50 rounded-lg mb-4">
+              <span>Total:</span>
+              <span>KSh. <span id="totalAmount">0</span></span>
+            </div>
+
+            <button id="placeOrderBtn" class="w-full px-6 py-3 btn-primary rounded-lg font-semibold text-white">Place Order</button>
+            <a href="products.html" class="block mt-3 text-center text-slate-600 hover:text-slate-900 text-sm">← Continue Shopping</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Load order summary
+    function loadOrderSummary() {
+      const orderItems = document.getElementById('orderItems');
+      orderItems.innerHTML = cart.map(item => `
+        <div class="flex justify-between text-sm">
+          <span>${item.name} × ${item.quantity}</span>
+          <span>KSh. ${item.price * item.quantity}</span>
+        </div>
+      `).join('');
+
+      updateTotal();
+    }
+
+    // Update total with delivery
+    function updateTotal() {
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      const delivery = document.querySelector('input[name="delivery"]:checked').value;
+      const deliveryFee = delivery === 'express' ? 500 : (subtotal < 3000 ? 300 : 0);
+      const total = subtotal + deliveryFee;
+
+      document.getElementById('subtotal').textContent = subtotal;
+      document.getElementById('deliveryFee').textContent = deliveryFee;
+      document.getElementById('totalAmount').textContent = total;
+    }
+
+    // Delivery method change
+    document.querySelectorAll('input[name="delivery"]').forEach(radio => {
+      radio.addEventListener('change', updateTotal);
+    });
+
+    // Place order
+    document.getElementById('placeOrderBtn').addEventListener('click', () => {
+      const form = document.getElementById('checkoutForm');
+      
+      // Validate form
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      const total = document.getElementById('totalAmount').textContent;
+      const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+
+      // Create order message
+      const orderMsg = `📦 New Order Received!\n\nCustomer: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nAddress: ${data.address}, ${data.city}\nPayment: ${paymentMethod.toUpperCase()}\n\nItems:\n${cart.map(item => `• ${item.name} (${item.quantity}x) - KSh. ${item.price * item.quantity}`).join('\n')}\n\nTotal: KSh. ${total}`;
+
+      // Send via WhatsApp
+      const phone = '254117446801';
+      const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(orderMsg)}`;
+      
+      // Clear cart and redirect
+      localStorage.removeItem('cart');
+      window.open(whatsappUrl, '_blank');
+      window.location.href = 'order-confirmation.html';
+    });
+
+    // Initialize
+    loadOrderSummary();
+  </script>
+</body>
+</html>

@@ -2,6 +2,12 @@
 :root{--brand:#0ea5a4;--accent:#f97316}
 html{scroll-behavior:smooth}
 
+/* Ensure AOS elements are visible even if AOS library fails to load */
+[data-aos] {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 @layer utilities {
   .animate-blob {
     animation: blob 8s infinite;

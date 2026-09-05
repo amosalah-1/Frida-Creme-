@@ -32,19 +32,31 @@
   }
   </script>
 
-  <!-- Tailwind Play CDN for quick prototyping (replace with build setup later) -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom styles -->
   <link rel="stylesheet" href="assets/styles.css" />
 
   <!-- AOS for scroll animations -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-  <!-- Lucide icons -->
-  <script src="https://unpkg.com/lucide@0.244.0/dist/lucide.min.js"></script>
+  <!-- Lucide icons for SVG icons -->
+  <script defer src="https://unpkg.com/lucide@0.244.0/dist/lucide.min.js"></script>
 
   <meta name="color-scheme" content="light dark">
   <link rel="icon" href="images/favicon.png">
+
+  <!-- Google Analytics (Replace GA_MEASUREMENT_ID with your actual ID from Google Analytics) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID', {'anonymize_ip': true});
+    // To enable: Replace 'GA_MEASUREMENT_ID' with your Google Analytics 4 measurement ID
+  </script>
 </head>
 <body class="font-sans text-slate-800 bg-gradient-to-b from-white to-slate-50 antialiased">
 
@@ -63,10 +75,9 @@
 
           <nav class="hidden md:flex items-center gap-6 text-sm">
             <a href="#home" class="hover:text-slate-900">Home</a>
-            <a href="#about" class="hover:text-slate-900">About</a>
-            <a href="#services" class="hover:text-slate-900">Services</a>
+            <a href="products.html" class="hover:text-slate-900">Products</a>
+            <a href="about.html" class="hover:text-slate-900">About</a>
             <a href="#why" class="hover:text-slate-900">Why Choose Us</a>
-            <a href="#testimonials" class="hover:text-slate-900">Testimonials</a>
             <a href="#contact" class="hover:text-slate-900">Contact</a>
           </nav>
 
@@ -80,14 +91,12 @@
         </div>
       </div>
 
-      <!-- Mobile nav -->
       <div id="mobileNav" class="md:hidden hidden overflow-hidden border-t border-slate-200 bg-white/95 backdrop-blur-md shadow-lg transition-all duration-300 ease-in-out max-h-0 opacity-0">
         <div class="px-4 py-3 flex flex-col gap-1">
           <a href="#home" class="block py-3 px-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Home</a>
-          <a href="#about" class="block py-3 px-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">About</a>
-          <a href="#services" class="block py-3 px-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Services</a>
+          <a href="products.html" class="block py-3 px-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Products</a>
+          <a href="about.html" class="block py-3 px-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">About</a>
           <a href="#why" class="block py-3 px-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Why Choose Us</a>
-          <a href="#testimonials" class="block py-3 px-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Testimonials</a>
           <a href="#contact" class="block py-3 px-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Contact</a>
         </div>
       </div>
@@ -119,7 +128,7 @@
               </div>
 
               <div class="flex items-center gap-6 mt-4 text-sm text-slate-600">
-                <div class="flex items-center gap-2"><strong class="text-slate-900">Since</strong><span>— Placeholder</span></div>
+                <div class="flex items-center gap-2"><strong class="text-slate-900">Since</strong><span>— 2020</span></div>
                 <div class="flex items-center gap-2"><strong class="text-slate-900" id="customersCounter">0</strong><span>Customers</span></div>
                 <div class="flex items-center gap-2"><strong class="text-slate-900" id="projectsCounter">0</strong><span>Projects</span></div>
               </div>
@@ -308,20 +317,7 @@
           </div>
         </div>
       </section>
-
-      <!-- Special Offer -->
-      <section class="py-12">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div class="bg-gradient-to-r from-emerald-500 to-amber-400 rounded-2xl p-8 text-white shadow-lg" data-aos="zoom-in">
-            <h3 class="text-2xl font-bold">Limited Time Offer</h3>
-            <p class="mt-2">Get 10% off your first order. Use code: WELCOME10 (placeholder)</p>
-            <div class="mt-4">
-              <a href="#contact" class="inline-block px-6 py-3 bg-white text-emerald-600 rounded-lg font-semibold">Claim Offer</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
+    
       <!-- Gallery -->
       <section class="py-12 bg-slate-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -450,14 +446,15 @@
                 <div class="text-sm text-slate-300">Shoes & Clothings — Muranga</div>
               </div>
             </div>
-            <p class="text-sm text-slate-400 mt-4">Premium footwear and apparel. Replace placeholder info with your contact details.</p>
+            <p class="text-sm text-slate-400 mt-4">Premium footwear and apparel for confident living.</p>
           </div>
 
           <div>
             <h4 class="font-semibold">Quick Links</h4>
             <ul class="mt-3 text-sm text-slate-300 space-y-2">
-              <li><a href="#services">Services</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="products.html" class="hover:text-white">Products</a></li>
+              <li><a href="about.html" class="hover:text-white">About Us</a></li>
+              <li><a href="size-guide.html" class="hover:text-white">Size Guide</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
@@ -480,7 +477,7 @@
                   <path d="M16.76 3.5c.53 1.65 1.93 2.77 3.67 3.14v2.75c-1.32-.11-2.49-.54-3.5-1.34v6.18c0 3.4-2.79 6.18-6.19 6.18S4.55 14.63 4.55 11.23 7.35 5.05 10.74 5.05c.35 0 .69.03 1.02.09v2.8a5.66 5.66 0 0 0-1.02-.12c-1.8 0-3.26 1.47-3.26 3.28s1.46 3.27 3.26 3.27c1.8 0 3.27-1.46 3.27-3.27V3.5h2.75z"></path>
                 </svg>
               </a>
-              <a href="https://www.instagram.com/" aria-label="Instagram" class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 text-slate-200 flex items-center justify-center hover:bg-pink-500 hover:text-white transition-colors duration-200">
+              <a href="https://www.instagram.com/fridah_creme_bales/" aria-label="Instagram" class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 text-slate-200 flex items-center justify-center hover:bg-pink-500 hover:text-white transition-colors duration-200">
                 <svg aria-hidden="true" viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor">
                   <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm5-3.25a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 17 6.25Z"></path>
                 </svg>
@@ -488,7 +485,15 @@
             </div>
           </div>
         </div>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 text-sm text-slate-400">© <span id="year">2026</span> FRIDAH CREME BALES. All rights reserved.</div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 pt-6 border-t border-slate-700 text-sm text-slate-400">
+          <div class="flex justify-between items-center flex-wrap gap-4">
+            <p>© <span id="year">2026</span> FRIDAH CREME BALES. All rights reserved.</p>
+            <div class="flex gap-4 text-slate-400">
+              <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
+              <a href="terms.html" class="hover:text-white">Terms</a>
+            </div>
+          </div>
+        </div>
       </footer>
     </main>
   </div>
