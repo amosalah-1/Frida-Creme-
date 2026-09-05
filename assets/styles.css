@@ -1,6 +1,15 @@
 /* Minimal critical styles to avoid FOUC */
 :root{--brand:#0ea5a4;--accent:#f97316}
 html{scroll-behavior:smooth}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#app {
+  max-width: 100%;
+  overflow-x: clip;
+}
 
 /* Ensure AOS elements are visible even if AOS library fails to load */
 [data-aos] {
@@ -79,4 +88,15 @@ button:focus, a:focus, input:focus, textarea:focus, select:focus { outline: 3px 
 /* Reduce motion if user prefers */
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+@media (max-width: 767px) {
+  .animate-blob {
+    animation: none;
+  }
+
+  [data-aos] {
+    transform: none !important;
+    transition: none !important;
+  }
 }

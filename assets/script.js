@@ -123,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function(){
     // In production, send this to your backend/email service
     return false;
   };
-  });
 
   // Update year
   document.getElementById('year').textContent = new Date().getFullYear();
