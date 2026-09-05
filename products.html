@@ -51,14 +51,14 @@
         </div>
 
         <!-- Filter Section -->
-        <div class="flex flex-col md:flex-row gap-4 mb-8">
+        <div class="space-y-4 mb-8">
           <div class="flex gap-2 flex-wrap">
-            <button class="filter-btn active px-4 py-2 rounded-lg border-2 border-emerald-500 bg-emerald-500 text-white" data-category="all">All</button>
-            <button class="filter-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-emerald-500" data-category="mens-shoes">Men's Shoes</button>
-            <button class="filter-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-emerald-500" data-category="womens-shoes">Women's Shoes</button>
-            <button class="filter-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-emerald-500" data-category="clothing">Clothing</button>
+            <button class="filter-btn active px-3 py-2 sm:px-4 sm:py-2 text-sm sm:text-base rounded-lg border-2 border-emerald-500 bg-emerald-500 text-white" data-category="all">All</button>
+            <button class="filter-btn px-3 py-2 sm:px-4 sm:py-2 text-sm sm:text-base rounded-lg border-2 border-slate-200 hover:border-emerald-500" data-category="mens-shoes">Men's</button>
+            <button class="filter-btn px-3 py-2 sm:px-4 sm:py-2 text-sm sm:text-base rounded-lg border-2 border-slate-200 hover:border-emerald-500" data-category="womens-shoes">Women's</button>
+            <button class="filter-btn px-3 py-2 sm:px-4 sm:py-2 text-sm sm:text-base rounded-lg border-2 border-slate-200 hover:border-emerald-500" data-category="clothing">Clothing</button>
           </div>
-          <select id="sortBy" class="ml-auto px-4 py-2 border-2 border-slate-200 rounded-lg">
+          <select id="sortBy" class="w-full sm:w-auto px-4 py-2 border-2 border-slate-200 rounded-lg text-sm sm:text-base">
             <option value="featured">Featured</option>
             <option value="price-low">Price: Low to High</option>
             <option value="price-high">Price: High to Low</option>
@@ -75,24 +75,24 @@
   </div>
 
   <!-- Shopping Cart Modal -->
-  <div id="cartModal" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl shadow-lg max-w-2xl w-full max-h-[90vh] flex flex-col">
-      <div class="flex items-center justify-between p-6 border-b border-slate-200">
-        <h2 class="text-2xl font-bold">Shopping Cart</h2>
+  <div id="cartModal" class="fixed inset-0 bg-black/50 hidden z-50 flex items-end md:items-center justify-center p-4">
+    <div class="bg-white rounded-t-2xl md:rounded-2xl shadow-lg max-w-2xl w-full max-h-[80vh] md:max-h-[90vh] flex flex-col">
+      <div class="flex items-center justify-between p-4 sm:p-6 border-b border-slate-200">
+        <h2 class="text-xl sm:text-2xl font-bold">Shopping Cart</h2>
         <button id="closeCart" class="text-2xl text-slate-400 hover:text-slate-600">×</button>
       </div>
       
-      <div id="cartItems" class="flex-1 overflow-y-auto p-6">
+      <div id="cartItems" class="flex-1 overflow-y-auto p-4 sm:p-6">
         <p class="text-slate-500 text-center py-8">Your cart is empty</p>
       </div>
       
-      <div class="border-t border-slate-200 p-6 space-y-4">
-        <div class="flex justify-between text-lg font-semibold">
+      <div class="border-t border-slate-200 p-4 sm:p-6 space-y-3 sm:space-y-4">
+        <div class="flex justify-between text-base sm:text-lg font-semibold">
           <span>Total:</span>
           <span>KSh. <span id="cartTotal">0</span></span>
         </div>
-        <button id="checkoutBtn" class="w-full px-6 py-3 btn-primary rounded-lg font-semibold text-white">Proceed to Checkout</button>
-        <button id="continueShopping" class="w-full px-6 py-3 border-2 border-slate-200 rounded-lg font-semibold hover:bg-slate-50">Continue Shopping</button>
+        <button id="checkoutBtn" class="w-full px-6 py-3 btn-primary rounded-lg font-semibold text-white text-base">Proceed to Checkout</button>
+        <button id="continueShopping" class="w-full px-6 py-3 border-2 border-slate-200 rounded-lg font-semibold hover:bg-slate-50 text-sm sm:text-base">Continue Shopping</button>
       </div>
     </div>
   </div>
